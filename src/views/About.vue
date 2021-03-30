@@ -1,5 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1 class="head">Starred Words</h1>
   </div>
 </template>
+
+<style>
+  .head {
+    text-align: left;
+  }
+</style>
