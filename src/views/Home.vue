@@ -8,10 +8,16 @@
 <script>
 import SearchWord from "../components/SearchWord";
 import List from "../components/List";
-import {mapGetters} from "vuex";
+import {mapGetters,mapActions} from "vuex";
 export default {
   name: 'Home',
   components: {SearchWord, List},
-  computed: mapGetters(['allWords'])
+  computed: mapGetters(['allWords']),
+  mounted() {
+    this.sesionWords()
+  },
+  methods: {
+    ...mapActions(['sesionWords'])
+  }
 }
 </script>

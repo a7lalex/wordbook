@@ -92,8 +92,7 @@ p {
   position: relative;
   align-items: center;
   display: flex;
-  padding: 10px;
-  margin-top: 0;
+  /*padding: 10px;*/
   padding-right: 34px;
   background: #fff;
   height: 44px;
@@ -104,6 +103,14 @@ p {
   padding: 10px;
   margin: 0;
   border-radius: 5px;
+}
+.card-detail {
+  margin-top: 20px;
+  text-align: left;
+  & a {
+    display: block;
+    margin-bottom: 20px;
+  }
 }
 .head {
   text-align: left;
@@ -130,4 +137,10 @@ p {
 }
 .pb-10 {
   padding-right: 10px;
+}
+.word {
+  text-decoration: none;
+  color: #2c3e50;
+  padding: 10px;
+  cursor: grab;
 }

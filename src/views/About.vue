@@ -8,10 +8,15 @@
 <script>
   import SearchWord from "../components/SearchWord";
   import List from "../components/List";
-  import {mapGetters} from "vuex";
+  import {mapGetters,mapActions} from "vuex";
   export default {
     name: 'StarredWords',
     components: {SearchWord, List},
-    computed: mapGetters(['allFavorites'])
+    computed: mapGetters(['allFavorites']),
+    mounted() {
+      this.sesionFavorites()
+    },
+    methods: mapActions(['sesionFavorites']),
+
   }
 </script>

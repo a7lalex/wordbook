@@ -3,8 +3,9 @@
         <ul v-if="!errorMessage">
             <li class="card-item" v-for="item in data" :key="item.id">
                 <p>
-                    <b class="pb-10">{{item.word}}</b> <i class="pb-10">{{item.partOfSpeech}}</i>
-                    {{item.text}}
+                    <router-link class="word" :to="'/word/'+item.id" :data="item.id"
+                    ><b class="pb-10">{{item.word}}</b> <i class="pb-10">{{item.partOfSpeech}}</i>
+                    {{item.text}} </router-link>
                     <img v-if="!item.favorites" @click="add(item)" class="btn-stars-active" src="../assets/star-outline.svg">
                     <img v-else @click="del(item)" class="btn-stars-active" src="../assets/star-blue.svg">
                 </p>
@@ -34,7 +35,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
