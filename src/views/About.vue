@@ -1,11 +1,17 @@
 <template>
-  <div>
-    <h1 class="head">Starred Words</h1>
+  <div class="card">
+    <SearchWord/>
+    <List :data="allFavorites"/>
   </div>
 </template>
 
-<style>
-  .head {
-    text-align: left;
+<script>
+  import SearchWord from "../components/SearchWord";
+  import List from "../components/List";
+  import {mapGetters} from "vuex";
+  export default {
+    name: 'StarredWords',
+    components: {SearchWord, List},
+    computed: mapGetters(['allFavorites'])
   }
-</style>
+</script>

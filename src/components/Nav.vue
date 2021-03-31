@@ -1,7 +1,9 @@
 <template>
     <div id="nav">
         <router-link to="/">Word Keeper</router-link>
-        <router-link to="/about">Starred Words</router-link>
+        <router-link to="/about">
+            <img class="pb-10" src="../assets/star.svg">
+            Starred Words</router-link>
     </div>
 </template>
 
@@ -10,7 +12,3 @@
         name: 'Nav.vue'
     }
 </script>
-
-<style scoped>
-
-</style>
