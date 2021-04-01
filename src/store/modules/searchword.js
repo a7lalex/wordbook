@@ -34,7 +34,6 @@ export default {
     mutations: {
         updateWords(state, words) {
             state.words = words
-            localStorage.setItem('words', JSON.stringify(state.words))
             if(words.message !== undefined) {
                 state.message = words.message
                 localStorage.setItem('message', JSON.stringify(state.message))
