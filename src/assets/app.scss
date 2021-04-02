@@ -1,146 +1,52 @@
+@import "./variables";
+
+@import "./components/card";
+@import "./components/btn";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $main-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background: #f8f4f4;
-  padding: 10px;
-  border-radius: 5px;
+  color: $text-color;
+  background: $body-color;
+  padding: $main-padding;
+  border-radius: $main-radius;
   min-height: 300px;
 }
 #nav {
-  padding: 10px;
-  background: #6ec0fb;
+  padding: $main-padding;
+  background: $main-color;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
-
+  border-radius: $main-radius;
   a {
-    font-size: 24px;
+    font-size: $head-size;
     font-weight: bold;
-    color: whitesmoke;
+    color: $body-color;
     text-decoration: none;
     display: flex;
 
     &.router-link-exact-active {
-      color: #fff;
+      color: $body-color;
     }
   }
 }
+// Декомпозировать
 p {
   white-space: nowrap; /* Запрещаем перенос строк */
   overflow: hidden; /* Обрезаем все, что не помещается в область */
   text-overflow: ellipsis; /* Добавляем многоточие */
   margin: 0;
 }
-.card {
-  /*display: flex;
-  width: 100%;*/
-  margin-top: 20px;
-  min-height: 200px;
-}
-.card-search {
-  background: #efefef;
-  padding: 20px;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.card-search input {
-  font-size: 20px;
-  padding: 7px;
-  border-radius: 5px;
-  border: 1px solid #808080;
-  outline: none;
-  min-width: 100px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.card-search input:focus {
-  border: 1px solid #6ec0fb;
-}
-.card-list {
-  //list-style: none;
-  text-align: left;
-  margin-top: 10px;
-  width: 100%;
-  border-radius: 5px;
-  box-sizing: border-box;
-  & ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-}
-@media (min-width: 640px) {
-  .card {
-    display: flex;
-    width: 100%;
-  }
-  .card-search {
-    width: 30%;
-  }
-  .card-list {
-    width: 70%;
-    padding-left: 20px;
-    margin: 0;
-  }
-}
-.card-item {
-  box-sizing: border-box;
-  position: relative;
-  align-items: center;
-  display: flex;
-  /*padding: 10px;*/
-  padding-right: 34px;
-  background: #fff;
-  height: 44px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-.card-error {
-  padding: 10px;
-  margin: 0;
-  border-radius: 5px;
-}
-.card-detail {
-  margin-top: 20px;
-  text-align: left;
-  & a {
-    display: block;
-    margin-bottom: 20px;
-  }
-}
 .head {
   text-align: left;
 }
-.card-relative {
-  position: relative;
-}
-.btn {
-  cursor: pointer;
-}
-.btn-search {
-  cursor: pointer;
-  position: absolute;
-  right: 7px;
-  top: 7px;
-}
-
-.btn-stars-active {
-  /*fill: #6ec0fb;*/
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
 .pb-10 {
-  padding-right: 10px;
+  padding-right: $main-padding;
 }
 .word {
   text-decoration: none;
-  color: #2c3e50;
-  padding: 10px;
+  color: $text-color;
+  padding: $main-padding;
   cursor: grab;
 }

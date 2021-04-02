@@ -4,7 +4,7 @@
             <input
                 v-model="word"
                 type="text">
-            <div class="btn-search" type="sybmit" @click="Search()"><img src="../assets/magnify.svg"></div>
+            <div class="btn-search" type="sybmit" @click="Search()"><img src="../assets/img/magnify.svg"></div>
         </div>
     </form>
 </template>

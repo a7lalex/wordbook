@@ -12,8 +12,8 @@
                             :to="'/word/'+item.id" :data="item.id"
                     ><b class="pb-10">{{item.word}}</b> <i class="pb-10">{{item.partOfSpeech}}</i>
                     {{item.text}} </router-link>
-                    <img v-if="!item.favorites" @click="add(item)" class="btn-stars-active" src="../assets/star-outline.svg">
-                    <img v-else @click="del(item)" class="btn-stars-active" src="../assets/star-blue.svg">
+                    <img v-if="!item.favorites" @click="add(item)" class="btn-stars-active" src="../assets/img/star-outline.svg">
+                    <img v-else @click="del(item)" class="btn-stars-active" src="../assets/img/star-blue.svg">
                 </p>
             </li>
             </draggable>
