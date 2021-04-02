@@ -1,25 +1,25 @@
 <template>
     <div class="card-list">
-        <ul v-if="!errorMessage">
+        <ul class="list" v-if="!errorMessage">
             <draggable>
             <li
-                class="card-item"
+                class="list-item"
                 v-for="item in data"
                 :key="item.id">
-                <p>
+                <div class="list-string">
                     <router-link
-                            class="word"
+                            class="list-link"
                             :to="'/word/'+item.id" :data="item.id"
-                    ><b class="pb-10">{{item.word}}</b> <i class="pb-10">{{item.partOfSpeech}}</i>
+                    ><b class="pb-10">{{item.word}}</b> <i>{{item.partOfSpeech}}</i>
                     {{item.text}} </router-link>
                     <img v-if="!item.favorites" @click="add(item)" class="btn-stars-active" src="../assets/img/star-outline.svg">
                     <img v-else @click="del(item)" class="btn-stars-active" src="../assets/img/star-blue.svg">
-                </p>
+                </div>
             </li>
             </draggable>
         </ul>
-        <div v-else>
-            <p class="card-item card-error">{{errorMessage}}</p>
+        <div class="list" v-else>
+            <p class="list-item list-error">{{errorMessage}}</p>
         </div>
     </div>
 </template>

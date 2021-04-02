@@ -1,0 +1,38 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &-item {
+    //box-sizing: border-box;
+    /*padding: 10px;*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: $white-color;
+    margin-bottom: $main-margin;
+    border-radius: $main-radius;
+    padding-right: 34px;
+    height: 44px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-string {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    margin: 0;
+  }
+  &-link {
+    text-decoration: none;
+    color: $text-color;
+    padding: $main-padding;
+    cursor: grab;
+  }
+  &-error {
+    padding: $main-padding;
+    border-radius: $main-radius;
+    margin: 0;
+  }
+}

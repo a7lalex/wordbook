@@ -2,6 +2,7 @@
 
 @import "./components/card";
 @import "./components/btn";
+@import "./components/list";
 #app {
   font-family: $main-family;
   -webkit-font-smoothing: antialiased;
@@ -30,23 +31,4 @@
       color: $body-color;
     }
   }
-}
-// Декомпозировать
-p {
-  white-space: nowrap; /* Запрещаем перенос строк */
-  overflow: hidden; /* Обрезаем все, что не помещается в область */
-  text-overflow: ellipsis; /* Добавляем многоточие */
-  margin: 0;
-}
-.head {
-  text-align: left;
-}
-.pb-10 {
-  padding-right: $main-padding;
-}
-.word {
-  text-decoration: none;
-  color: $text-color;
-  padding: $main-padding;
-  cursor: grab;
 }
