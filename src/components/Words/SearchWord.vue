@@ -4,7 +4,7 @@
             <input
                 v-model="word"
                 type="text">
-            <div class="btn-search" type="sybmit" @click="Search()"><img src="../assets/img/magnify.svg"></div>
+            <div class="btn btn-search" type="sybmit" @click="Search()"><img src="../../assets/img/magnify.svg"></div>
         </div>
     </form>
 </template>
@@ -18,13 +18,8 @@ export default {
             word: '',
         }
     },
-    watch: {
-        /*word() {
-            this.searchWord()
-        }*/
-    },
     methods: {
-        ...mapActions(['searchWord','addWord','delWord']),
+        ...mapActions(['searchWord']),
         Search() {
             this.$store.dispatch('searchWord', this.word)
         },

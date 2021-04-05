@@ -6,17 +6,16 @@
 </template>
 
 <script>
-  import SearchWord from "../components/SearchWord";
+  import SearchWord from "../components/Words/SearchWord";
   import List from "../components/List";
   import {mapGetters,mapActions} from "vuex";
   export default {
     name: 'StarredWords',
-    components: {SearchWord, List},
+    components: {List, SearchWord},
     computed: mapGetters(['allFavorites']),
     mounted() {
       this.sesionFavorites()
     },
     methods: mapActions(['sesionFavorites']),
-
   }
 </script>

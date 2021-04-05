@@ -1,0 +1,13 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-nav {
+    display: flex;
+    justify-content: space-between;
+}
+

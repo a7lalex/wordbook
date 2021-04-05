@@ -1,16 +1,14 @@
 // api key https://api.wordnik.com/v4/word.json/rainbow/relatedWords?useCanonical=false&limitPerRelationshipType=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5
 export default {
-    state: {
+    state:{
         favorites: [],
         message: '',
         words: [],
         limit: '10'
     },
     actions: {
-        async searchWord({commit, state}, word) {
-            const res = await fetch(
-                'https://api.wordnik.com/v4/word.json/' + word +'/definitions?limit='+state.limit+'&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
-            )
+        async searchWord({ dispatch, commit}, word) {
+            const res = await dispatch('search',word)
             const words = await res.json()
 
             for (var i = 0; i < words.length; i++) {
@@ -21,9 +19,7 @@ export default {
                     words[i].favorites = false
                 }
             }
-
             commit('updateWords', words)
-            console.log('words: ',words)
         },
         sesionWords({commit}) {
             commit('setWords')
@@ -42,13 +38,12 @@ export default {
         updateWords(state, words) {
             state.words = words
             localStorage.setItem('words', JSON.stringify(state.words))
-
             if(words.message !== undefined) {
                 state.message = words.message
                 localStorage.setItem('message', JSON.stringify(state.message))
             } else {
                 state.message = ''
-                localStorage.removeItem('message', JSON.stringify(state.message))
+                localStorage.setItem('message',state.message)
             }
         },
         setWords(state) {
@@ -77,7 +72,6 @@ export default {
             }
             let i = state.words.findIndex(n => n.id === word.id)
             if (i !== -1) {
-                console.log('')
                 state.words[i].favorites = false
                 localStorage.setItem('words', JSON.stringify(state.words))
             }
@@ -97,6 +91,6 @@ export default {
         },
         allFavorites(state) {
             return state.favorites
-        }
+        },
     }
 }

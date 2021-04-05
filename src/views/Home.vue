@@ -1,17 +1,17 @@
 <template>
   <div class="card">
     <SearchWord/>
-    <List :data="allWords"/>
+    <ListWords :data="allWords"/>
   </div>
 </template>
 
 <script>
-import SearchWord from "../components/SearchWord";
-import List from "../components/List";
+import SearchWord from "../components/Words/SearchWord";
+import ListWords from "../components/Words/ListWord";
 import {mapGetters,mapActions} from "vuex";
 export default {
   name: 'Home',
-  components: {SearchWord, List},
+  components: {SearchWord, ListWords},
   computed: mapGetters(['allWords']),
   mounted() {
     this.sesionWords()

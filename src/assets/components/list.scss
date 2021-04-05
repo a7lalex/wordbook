@@ -1,17 +1,14 @@
 .list {
+  @include reset();
   list-style: none;
-  padding: 0;
-  margin: 0;
 
   &-item {
-    //box-sizing: border-box;
-    /*padding: 10px;*/
-    position: relative;
-    display: flex;
-    align-items: center;
+    @include flex();
     background: $white-color;
     margin-bottom: $main-margin;
     border-radius: $main-radius;
+    position: relative;
+    box-sizing: border-box;
     padding-right: 34px;
     height: 44px;
     &:last-child {
@@ -25,9 +22,9 @@
     margin: 0;
   }
   &-link {
-    text-decoration: none;
     color: $text-color;
     padding: $main-padding;
+    text-decoration: none;
     cursor: grab;
   }
   &-error {
