@@ -1,9 +1,7 @@
 <template>
     <form class="card-search" @submit.prevent="Search()">
         <div class="card-relative">
-            <input
-                v-model="word"
-                type="text">
+            <input v-model="word" type="text">
             <div class="btn btn-search" type="sybmit" @click="Search()"><img src="../../assets/img/magnify.svg"></div>
         </div>
     </form>

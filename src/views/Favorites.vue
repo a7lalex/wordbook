@@ -1,21 +1,17 @@
 <template>
   <div class="card">
-    <SearchWord/>
-    <List :data="allFavorites"/>
+    <SearchFavorites/>
+    <ListFavorites :list="allFavorites"/>
   </div>
 </template>
 
 <script>
-  import SearchWord from "../components/Words/SearchWord";
-  import List from "../components/List";
-  import {mapGetters,mapActions} from "vuex";
+  import SearchFavorites from "../components/Favorites/SearchFavorites";
+  import ListFavorites from "../components/Favorites/ListFavorites";
+  import {mapGetters} from "vuex";
   export default {
-    name: 'StarredWords',
-    components: {List, SearchWord},
+    name: 'Favorites',
+    components: {ListFavorites, SearchFavorites},
     computed: mapGetters(['allFavorites']),
-    mounted() {
-      this.sesionFavorites()
-    },
-    methods: mapActions(['sesionFavorites']),
   }
 </script>

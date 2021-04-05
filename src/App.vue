@@ -6,7 +6,17 @@
 </template>
 <script>
   import Nav from './components/Nav';
+  import {mapActions} from "vuex";
   export default {
-    components: {Nav}
+    components: {Nav},
+    mounted() {
+      this.session()
+    },
+    methods: {
+      ...mapActions(['session']),
+      session() {
+        this.$store.dispatch('session')
+      }
+    }
   }
 </script>

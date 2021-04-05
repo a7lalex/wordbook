@@ -1,4 +1,3 @@
-// api key https://api.wordnik.com/v4/word.json/rainbow/relatedWords?useCanonical=false&limitPerRelationshipType=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5
 export default {
     state:{
         favorites: [],
@@ -21,17 +20,17 @@ export default {
             }
             commit('updateWords', words)
         },
-        sesionWords({commit}) {
-            commit('setWords')
-        },
         addWord({commit},word) {
             commit('addStar',word)
         },
         delWord({commit}, word) {
             commit('delStar', word)
         },
-        sesionFavorites({commit}) {
-            commit('setFavorites')
+        session({commit}) {
+            commit('sessionApp')
+        },
+        searchFavorites({commit}, word) {
+            commit('Favorites',word)
         }
     },
     mutations: {
@@ -46,17 +45,10 @@ export default {
                 localStorage.setItem('message',state.message)
             }
         },
-        setWords(state) {
-            if (window.localStorage.words) {
-                state.words = JSON.parse(window.localStorage.getItem('words'))
-            }
-            if (window.localStorage.message && state.message !== undefined) {
-                state.message = JSON.parse(window.localStorage.getItem('message'))
-            }
-        },
         addStar(state,word) {
             word.favorites = true
             let index = state.words.findIndex(n => n.id === word.id)
+
             if (index !== -1) {
                 localStorage.setItem('words', JSON.stringify(state.words))
             }
@@ -76,10 +68,27 @@ export default {
                 localStorage.setItem('words', JSON.stringify(state.words))
             }
         },
-        setFavorites(state) {
+        sessionApp(state) {
+            if (window.localStorage.words) {
+                state.words = JSON.parse(window.localStorage.getItem('words'))
+            }
             if (window.localStorage.favorites) {
                 state.favorites = JSON.parse(window.localStorage.getItem('favorites'))
             }
+            if (window.localStorage.message && state.message !== undefined) {
+                state.message = JSON.parse(window.localStorage.getItem('message'))
+            }
+        },
+        Favorites(state, text) {
+            var title = text
+            var arr = state.favorites
+            return state.favorites.filter(function (elem) {
+                console.log(elem.word.indexOf(text) > -1)
+                if(title==='') {return state.favorites=arr}
+                else {
+                    return elem.word.indexOf(text) > -1
+                }
+            })
         }
     },
     getters: {
